@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 const IndexPage = ({ data }) => {
   return (
-    <main className="container mx-auto my-8">
+    <main className="container mx-auto my-8 px-4">
       <Helmet>
         <title>Home Page | {data.site.siteMetadata.title}</title>
       </Helmet>
