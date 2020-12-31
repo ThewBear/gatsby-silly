@@ -1,8 +1,8 @@
 import * as React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 
-const IndexPage = ({ data }) => {
+const MyTweetPage = ({ data }) => {
   return (
     <main className="container mx-auto my-8">
       <Helmet>
@@ -11,31 +11,23 @@ const IndexPage = ({ data }) => {
       <h1 className="text-3xl leading-normal mb-4">
         {data.site.siteMetadata.title}
       </h1>
-      <ul>
-        {data.allMyTweet.nodes.map((tweet) => (
-          <Link key={tweet.tweet_id} to={tweet.tweet_id}>
-            <li className="mb-2">{tweet.tweet_text}</li>
-          </Link>
-        ))}
-      </ul>
+      <p>{data.myTweet.tweet_text}</p>
     </main>
   );
 };
 
 export const query = graphql`
-  query {
+  query($id: String) {
     site {
       siteMetadata {
         title
       }
     }
-    allMyTweet {
-      nodes {
-        tweet_id
-        tweet_text
-      }
+    myTweet(id: { eq: $id }) {
+      tweet_text
+      tweet_id
     }
   }
 `;
 
-export default IndexPage;
+export default MyTweetPage;
