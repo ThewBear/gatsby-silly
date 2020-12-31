@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "My silly tweets",
   },
+  pathPrefix: `/gatsby-silly`,
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-sharp",
