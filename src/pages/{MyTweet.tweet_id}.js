@@ -6,7 +6,7 @@ const MyTweetPage = ({ data }) => {
   return (
     <main className="container mx-auto my-8 px-4">
       <Helmet>
-        <title>Home Page | {data.site.siteMetadata.title}</title>
+        <title>Tweet {data.myTweet.tweet_id} | {data.site.siteMetadata.title}</title>
       </Helmet>
       <h1 className="text-3xl leading-normal mb-4">
         {data.site.siteMetadata.title}
