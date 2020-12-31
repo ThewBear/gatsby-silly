@@ -13,9 +13,11 @@ const IndexPage = ({ data }) => {
       </h1>
       <ul>
         {data.allMyTweet.nodes.map((tweet) => (
-          <Link key={tweet.tweet_id} to={tweet.tweet_id}>
-            <li className="mb-2">{tweet.tweet_text}</li>
-          </Link>
+          <li className="mb-2">
+            <Link key={tweet.tweet_id} to={tweet.tweet_id}>
+              {tweet.tweet_text}{" "}
+            </Link>
+          </li>
         ))}
       </ul>
     </main>
