@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Copy existing results
-        run: cp -r results/. default/_data
       - run: npm install
       - run: npm run build --prefix-paths
       - name: Deploy to gh-pages branch
