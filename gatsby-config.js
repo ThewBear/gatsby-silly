@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "My silly tweets",
+    siteUrl: `https://thewbear.github.io`,
   },
   pathPrefix: `/gatsby-silly`,
   plugins: [
